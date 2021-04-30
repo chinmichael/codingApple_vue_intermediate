@@ -9,7 +9,12 @@
         v-for="(a, i) in list_item"
         :key="i"
       >
-        <h5>{{ a.title }}</h5>
+        <h5>
+          <router-link :to="{ name: 'detail', params: { id: a.number } }">{{
+            a.title
+          }}</router-link
+          ><!--detail이란 이름의 파라미터로 id를 보낸다고 생각-->
+        </h5>
         <p>{{ a.date }}</p>
       </div>
     </div>
