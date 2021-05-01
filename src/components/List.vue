@@ -10,10 +10,14 @@
         :key="i"
       >
         <h5>
-          <router-link :to="{ name: 'detail', params: { id: a.number } }">{{
-            a.title
-          }}</router-link
-          ><!--detail이란 이름의 파라미터로 id를 보낸다고 생각-->
+          <!-- <router-link
+            class="main-router"
+            :to="{ name: 'detail', params: { id: a.number } }"> -->
+          <!--detail이란 이름의 파라미터로 바디에 id를 보낸다고 생각-->
+          <router-link class="main-router" :to="'/detail/' + a.number"
+            ><!--바인딩해서 문자열+파라미터-->
+            {{ a.title }}</router-link
+          >
         </h5>
         <p>{{ a.date }}</p>
       </div>
@@ -66,6 +70,15 @@ export default {
   font-size: 15px;
   font-weight: 600;
   color: lightgrey;
+}
+
+.main-router {
+  text-decoration: none;
+  color: olivedrab;
+}
+
+.main-router:hover {
+  color: teal;
 }
 </style>
 

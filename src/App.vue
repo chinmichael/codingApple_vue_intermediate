@@ -3,7 +3,9 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <!--와이드 container-->
-        <a class="navbar-brand" href="#">Vue Study</a>
+        <a class="navbar-brand" href="#">
+          <router-link class="nav-router" to="/">Vue Study</router-link></a
+        >
         <button
           class="navbar-toggler"
           type="button"
@@ -19,16 +21,15 @@
           <ul class="navbar-nav">
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#"
-                ><router-link to="/">Home</router-link></a
+                ><router-link class="nav-router" to="/">Home</router-link></a
               >
             </li>
             <li class="nav-item">
               <a class="nav-link" aria-current="page" href="#"
-                ><router-link to="/list">List</router-link></a
+                ><router-link class="nav-router" to="/list"
+                  >List</router-link
+                ></a
               >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Detail</a>
             </li>
           </ul>
         </div>
@@ -40,8 +41,8 @@
         <p>-Vue.js로 제작함-</p>
       </div> -->
       <div class="link-list text-center mt-3 p-2 mb-0">
-        <router-link to="/">홈으로</router-link>
-        <router-link to="/list">리스트 페이지</router-link>
+        <router-link class="log-router" to="/">홈으로</router-link> &nbsp;&nbsp;
+        <router-link class="log-router" to="/list">리스트 페이지</router-link>
       </div>
       <router-view v-bind:list_item="list_inform"></router-view>
       <!-- <List v-bind:list_item="list_inform"></List> 이제 url을 이용한 라우터를 통해 list를 위 router-view영역에서 보여줌-->
@@ -76,6 +77,21 @@ h5 {
 .text-center {
   text-align: center;
 }
+
+.nav-router {
+  text-decoration: none;
+  color: white;
+}
+
+.nav-router:hover {
+  color: gray;
+}
+
+.log-router {
+  text-decoration: none;
+  color: gray;
+}
+
 /* .intro-box {
   background-color: white;
   border-radius: 5px;
